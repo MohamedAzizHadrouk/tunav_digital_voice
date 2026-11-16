@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Digital Voice Admin</title>
+  <link rel="icon" href="assets/tunav-symbole-original.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=1.3.3">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner" style="max-width:1200px">
+      <img src="assets/tunav-logo-horizontal-sans-signature-original.svg" alt="TUNAV">
+      <span class="title">DIGITAL VOICE · Administration</span>
+      <span class="spacer"></span>
+      <a class="btn btn-ghost btn-sm" href="index.html" style="text-decoration:none">Voir le questionnaire</a>
+      <span class="small muted" id="who"></span>
+      <button type="button" class="btn btn-ghost btn-sm hidden" id="btn-logout">Se déconnecter</button>
+    </div>
+  </header>
+
+  <main class="wrap wide" id="main">
+    <div id="banner"></div>
+
+    <section id="login" class="card login hidden" aria-labelledby="login-title">
+      <h2 id="login-title">Connexion administrateur</h2>
+      <p class="small muted">Compte créé dans Supabase › Authentication, et ajouté à la table <code>dv_admins</code>.</p>
+      <form id="login-form" class="stack">
+        <div><label class="q-label" for="email">Email</label><input type="email" id="email" autocomplete="username" required></div>
+        <div><label class="q-label" for="password">Mot de passe</label><input type="password" id="password" autocomplete="current-password" required></div>
+        <button class="btn btn-primary" type="submit">Se connecter</button>
+        <div class="banner err hidden" id="login-error" role="alert"></div>
+      </form>
+    </section>
+
+    <section id="app" class="hidden">
+      <h1>Réponses au questionnaire</h1>
+      <p class="muted small" id="meta"></p>
+      <div class="kpis" id="kpis"></div>
+
+      <div class="toolbar" aria-label="Filtres">
+        <select id="f-dept" aria-label="Département"><option value="">Tous les départements</option></select>
+        <select id="f-contact" aria-label="Contact client">
+          <option value="">Contact client : tous</option>
+          <option value="C">Contact direct (C)</option>
+          <option value="N">Sans contact direct (N)</option>
+        </select>
+        <input type="search" id="f-search" placeholder="Rechercher un nom…" aria-label="Rechercher un nom">
+        <span class="spacer" style="flex:1"></span>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-refresh">Actualiser</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-csv">Export CSV</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btn-json">Export JSON</button>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-tab="list">Réponses</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="stats">Statistiques par question</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="depts">Par département</button>
+      </div>
+      <div id="tab-list" style="margin-top:16px"></div>
+      <div id="tab-stats" class="hidden" style="margin-top:16px"></div>
+      <div id="tab-depts" class="hidden" style="margin-top:16px"></div>
+    </section>
+  </main>
+
+  <div class="drawer-bg" id="drawer-bg"></div>
+  <aside class="drawer" id="drawer" aria-label="Détail d'une réponse" role="dialog" aria-modal="true"></aside>
+
+  <script src="js/config.js?v=1.3.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/data.js?v=1.3.3"></script>
+  <script src="js/admin.js?v=1.3.3"></script>
+</body>
+</html>

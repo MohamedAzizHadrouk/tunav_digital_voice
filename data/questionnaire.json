@@ -1,0 +1,3242 @@
+{
+  "id": "tunav-digital-voice",
+  "version": "1.3.1",
+  "status": "draft",
+  "languages": [
+    "fr",
+    "tn-arab"
+  ],
+  "anonymous": false,
+  "deadlineDaysAfterSend": 7,
+  "reminderDay": 4,
+  "scales": {
+    "agree": [
+      {
+        "value": "1",
+        "fr": "Pas du tout d'accord",
+        "tn": "موش موافق بالكل"
+      },
+      {
+        "value": "2",
+        "fr": "Plutôt pas d'accord",
+        "tn": "موش موافق"
+      },
+      {
+        "value": "3",
+        "fr": "Ni d'accord ni pas d'accord",
+        "tn": "بين وبين"
+      },
+      {
+        "value": "4",
+        "fr": "Plutôt d'accord",
+        "tn": "موافق"
+      },
+      {
+        "value": "5",
+        "fr": "Tout à fait d'accord",
+        "tn": "موافق مية بالمية"
+      }
+    ],
+    "freq": [
+      {
+        "value": "1",
+        "fr": "Jamais",
+        "tn": "حتى مرة"
+      },
+      {
+        "value": "2",
+        "fr": "Rarement",
+        "tn": "قليل"
+      },
+      {
+        "value": "3",
+        "fr": "Parfois",
+        "tn": "ساعات"
+      },
+      {
+        "value": "4",
+        "fr": "Souvent",
+        "tn": "برشا"
+      },
+      {
+        "value": "5",
+        "fr": "Toujours",
+        "tn": "ديما"
+      }
+    ],
+    "level": [
+      {
+        "value": "1",
+        "fr": "Très faible",
+        "tn": "ضعيف برشا"
+      },
+      {
+        "value": "2",
+        "fr": "Faible",
+        "tn": "ضعيف"
+      },
+      {
+        "value": "3",
+        "fr": "Moyen",
+        "tn": "متوسط"
+      },
+      {
+        "value": "4",
+        "fr": "Bon",
+        "tn": "باهي"
+      },
+      {
+        "value": "5",
+        "fr": "Excellent",
+        "tn": "ممتاز"
+      },
+      {
+        "value": "N/A",
+        "fr": "Je ne connais pas",
+        "tn": "ما نعرفوش"
+      }
+    ],
+    "compare": [
+      {
+        "value": "1",
+        "fr": "Le concurrent est plus fort",
+        "tn": "المنافس أقوى"
+      },
+      {
+        "value": "2",
+        "fr": "Équivalent",
+        "tn": "كيف كيف"
+      },
+      {
+        "value": "3",
+        "fr": "TUNAV est plus fort",
+        "tn": "TUNAV أقوى"
+      },
+      {
+        "value": "N/A",
+        "fr": "Je ne sais pas",
+        "tn": "ما نعرفش"
+      }
+    ],
+    "know": [
+      {
+        "value": "1",
+        "fr": "Je ne connais pas",
+        "tn": "ما نعرفوش"
+      },
+      {
+        "value": "2",
+        "fr": "J'en ai entendu parler",
+        "tn": "سمعت بيه"
+      },
+      {
+        "value": "3",
+        "fr": "Je peux l'expliquer à un client",
+        "tn": "نجم نفسّرو لحريف"
+      }
+    ],
+    "stage": [
+      {
+        "value": "1",
+        "fr": "Idée",
+        "tn": "فكرة"
+      },
+      {
+        "value": "2",
+        "fr": "En conception",
+        "tn": "في التصميم"
+      },
+      {
+        "value": "3",
+        "fr": "En développement",
+        "tn": "في التطوير"
+      },
+      {
+        "value": "4",
+        "fr": "En test",
+        "tn": "في التجربة"
+      },
+      {
+        "value": "5",
+        "fr": "Disponible",
+        "tn": "متوفّر"
+      },
+      {
+        "value": "N/A",
+        "fr": "Je ne sais pas",
+        "tn": "ما نعرفش"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "I",
+      "title": {
+        "fr": "Identification",
+        "tn": "التعريف"
+      },
+      "audience": "all",
+      "questions": [
+        {
+          "id": "I-01",
+          "text": {
+            "fr": "Nom et prénom",
+            "tn": "الإسم واللقب"
+          },
+          "required": true,
+          "type": "open-short",
+          "feeds": [
+            "SUIVI"
+          ]
+        },
+        {
+          "id": "I-02",
+          "text": {
+            "fr": "Poste occupé",
+            "tn": "الخطة متاعك"
+          },
+          "required": true,
+          "type": "open-short",
+          "feeds": [
+            "SUIVI"
+          ]
+        },
+        {
+          "id": "I-03",
+          "text": {
+            "fr": "Votre département",
+            "tn": "القسم متاعك"
+          },
+          "required": true,
+          "type": "single",
+          "branching": "ouvre la section du département choisi",
+          "feeds": [
+            "SUIVI"
+          ],
+          "options": [
+            {
+              "fr": "Direction",
+              "tn": "الإدارة العامة",
+              "goto": "DIR"
+            },
+            {
+              "fr": "Commercial",
+              "tn": "التجاري",
+              "goto": "COM"
+            },
+            {
+              "fr": "SAV (service après-vente et installation)",
+              "tn": "خدمة ما بعد البيع والتركيب",
+              "goto": "SAV"
+            },
+            {
+              "fr": "Administration / RH / Finance",
+              "tn": "الإدارة / الموارد البشرية / المالية",
+              "goto": "ADM"
+            },
+            {
+              "fr": "Technique",
+              "tn": "التقني",
+              "goto": "TEC"
+            },
+            {
+              "fr": "IT (développement et déploiement)",
+              "tn": "الإعلامية (تطوير ونشر التطبيقات)",
+              "goto": "IT"
+            }
+          ]
+        },
+        {
+          "id": "I-04",
+          "text": {
+            "fr": "Depuis combien de temps travaillez-vous chez TUNAV ?",
+            "tn": "قدّاش عندك تخدم في TUNAV؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "SUIVI"
+          ],
+          "options": [
+            {
+              "fr": "Moins d'un an",
+              "tn": "أقل من عام"
+            },
+            {
+              "fr": "1 à 3 ans",
+              "tn": "من عام لثلاثة سنين"
+            },
+            {
+              "fr": "3 à 5 ans",
+              "tn": "من ثلاثة لخمسة سنين"
+            },
+            {
+              "fr": "Plus de 5 ans",
+              "tn": "أكثر من خمسة سنين"
+            }
+          ]
+        },
+        {
+          "id": "I-05",
+          "text": {
+            "fr": "Êtes-vous en contact direct avec les clients (téléphone, visite, installation, email, réseaux) ?",
+            "tn": "تتعامل مباشرة مع الحرفاء (تلفون، زيارة، تركيب، إيميل، منصات)؟"
+          },
+          "required": true,
+          "type": "single",
+          "branching": "« oui » ouvre la partie C, « non » ouvre la partie N",
+          "feeds": [
+            "SUIVI"
+          ],
+          "options": [
+            {
+              "fr": "Oui, régulièrement",
+              "tn": "إيه، بصفة منتظمة",
+              "goto": "C"
+            },
+            {
+              "fr": "Oui, de temps en temps",
+              "tn": "إيه، من وقت لآخر",
+              "goto": "C"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا",
+              "goto": "N"
+            }
+          ]
+        },
+        {
+          "id": "I-06",
+          "text": {
+            "fr": "J'ai compris que mes réponses sont nominatives, utilisées uniquement en interne pour la stratégie marketing de TUNAV, et que rien ne sera publié sans mon accord écrit. Les informations sur TUNAV ONE et FleetIQ présentées ici sont internes et ne doivent pas être partagées à l'extérieur.",
+            "tn": "فهمت إلّي الأجوبة متاعي بالإسم، تستعمل داخل TUNAV برك للاستراتيجية التسويقية، وحتى شي ما يتنشر من غير موافقتي المكتوبة. المعلومات على TUNAV ONE وFleetIQ إلّي في الاستبيان داخلية وما لازمهاش تخرج برّا الشركة."
+          },
+          "required": true,
+          "type": "consent",
+          "feeds": [
+            "REGLES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T",
+      "title": {
+        "fr": "Partie 1 · Pour tous",
+        "tn": "الجزء 1 · للكل"
+      },
+      "audience": "all",
+      "questions": [
+        {
+          "id": "T-01",
+          "block": {
+            "fr": "TUNAV en une phrase",
+            "tn": "TUNAV في جملة"
+          },
+          "text": {
+            "fr": "Comment expliquez-vous TUNAV en une phrase à quelqu'un qui ne connaît pas l'entreprise ?",
+            "tn": "كيفاش تفسّر TUNAV في جملة وحدة لواحد ما يعرفهاش؟"
+          },
+          "required": true,
+          "type": "open-short",
+          "feeds": [
+            "POSITIONNEMENT",
+            "VOIX"
+          ]
+        },
+        {
+          "id": "T-02",
+          "block": {
+            "fr": "TUNAV en une phrase",
+            "tn": "TUNAV في جملة"
+          },
+          "text": {
+            "fr": "Selon vous, quelles sont les 3 offres les plus importantes de TUNAV ?",
+            "tn": "حسب رأيك، شنوّة أهم 3 عروض عند TUNAV؟"
+          },
+          "required": true,
+          "type": "multi",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "OFFRE",
+            "POSITIONNEMENT"
+          ],
+          "note": "compare la perception interne à l'offre réelle (TUNAV ne doit pas être réduite au GPS – décision PDG 11/11/2026).",
+          "options": [
+            {
+              "fr": "Développement d'applications sur mesure",
+              "tn": "تطوير تطبيقات حسب الطلب"
+            },
+            {
+              "fr": "DashCam",
+              "tn": "DashCam (كاميرا الكرهبة)"
+            },
+            {
+              "fr": "Produits IoT et industriels",
+              "tn": "منتوجات IoT وصناعية"
+            },
+            {
+              "fr": "GPS Basic",
+              "tn": "GPS Basic"
+            },
+            {
+              "fr": "GPS Pro",
+              "tn": "GPS Pro"
+            },
+            {
+              "fr": "GPS BUSCAN",
+              "tn": "GPS BUSCAN"
+            }
+          ]
+        },
+        {
+          "id": "T-03",
+          "block": {
+            "fr": "TUNAV en une phrase",
+            "tn": "TUNAV في جملة"
+          },
+          "text": {
+            "fr": "Êtes-vous d'accord avec ces affirmations ?",
+            "tn": "قدّاش إنت موافق على الجمل هاذي؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "POSITIONNEMENT",
+            "MARQUE-INTERNE"
+          ],
+          "rows": [
+            {
+              "fr": "TUNAV n'est pas seulement une société de GPS.",
+              "tn": "TUNAV موش كان شركة GPS."
+            },
+            {
+              "fr": "« L'expert qui explique, prouve et accompagne » décrit bien TUNAV.",
+              "tn": "«الخبير إلّي يفسّر، يثبت ويرافق» توصف TUNAV مليح."
+            },
+            {
+              "fr": "Je suis fier / fière de dire que je travaille chez TUNAV.",
+              "tn": "نفتخر كي نقول إلّي نخدم في TUNAV."
+            }
+          ]
+        },
+        {
+          "id": "T-04",
+          "block": {
+            "fr": "TUNAV en une phrase",
+            "tn": "TUNAV في جملة"
+          },
+          "text": {
+            "fr": "Aujourd'hui, TUNAV est…",
+            "tn": "اليوم، TUNAV…"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "VOIX"
+          ],
+          "note": "teste les 5 traits de personnalité validés (Brand Book).",
+          "rows": [
+            {
+              "fr": "Compétente",
+              "tn": "عندها الكفاءة"
+            },
+            {
+              "fr": "Crédible",
+              "tn": "يتّيق فيها"
+            },
+            {
+              "fr": "Réactive",
+              "tn": "تتحرّك بالزربة"
+            },
+            {
+              "fr": "Audacieuse",
+              "tn": "جريئة"
+            },
+            {
+              "fr": "Proche de ses clients",
+              "tn": "قريبة من حرفاها"
+            }
+          ]
+        },
+        {
+          "id": "T-05",
+          "block": {
+            "fr": "Nos produits aujourd'hui et TUNAV ONE",
+            "tn": "المنتوجات متاعنا اليوم وTUNAV ONE"
+          },
+          "text": {
+            "fr": "Connaissez-vous nos produits actuels ?",
+            "tn": "تعرف المنتوجات متاعنا الحالية؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "know",
+          "feeds": [
+            "OFFRE",
+            "MARQUE-INTERNE"
+          ],
+          "rows": [
+            {
+              "fr": "Webtrace Basic (tracking)",
+              "tn": "Webtrace Basic (التتبّع)"
+            },
+            {
+              "fr": "Webtrace Pro (gestion de parc)",
+              "tn": "Webtrace Pro (تسيير الأسطول)"
+            },
+            {
+              "fr": "Webtrace Pro Plus (BUSCAN)",
+              "tn": "Webtrace Pro Plus (BUSCAN)"
+            },
+            {
+              "fr": "Minitrace (application mobile pour les particuliers)",
+              "tn": "Minitrace (تطبيقة موبايل للأفراد)"
+            },
+            {
+              "fr": "DashCam",
+              "tn": "DashCam"
+            },
+            {
+              "fr": "Développement d'applications sur mesure",
+              "tn": "تطوير تطبيقات حسب الطلب"
+            },
+            {
+              "fr": "Produits IoT et industriels",
+              "tn": "منتوجات IoT وصناعية"
+            }
+          ]
+        },
+        {
+          "id": "T-06",
+          "block": {
+            "fr": "Nos produits aujourd'hui et TUNAV ONE",
+            "tn": "المنتوجات متاعنا اليوم وTUNAV ONE"
+          },
+          "text": {
+            "fr": "Connaissez-vous les noms du futur écosystème TUNAV ONE ?",
+            "tn": "تعرف الأسامي متاع النظام الجديد TUNAV ONE؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "know",
+          "feeds": [
+            "OFFRE",
+            "MARQUE-INTERNE"
+          ],
+          "note": "mesure la connaissance interne avant le lancement ; noms internes, à ne pas communiquer à l'extérieur.",
+          "rows": [
+            {
+              "fr": "FleetIQ (gestion de flotte et tracking GPS)",
+              "tn": "FleetIQ (تسيير الأسطول وتتبّع GPS)"
+            },
+            {
+              "fr": "DigitalOps (opérations d'entreprise et automatisation)",
+              "tn": "DigitalOps (عمليات الشركة والأتمتة)"
+            },
+            {
+              "fr": "SmartOps",
+              "tn": "SmartOps"
+            },
+            {
+              "fr": "PulseIQ",
+              "tn": "PulseIQ"
+            },
+            {
+              "fr": "iBlaze",
+              "tn": "iBlaze"
+            },
+            {
+              "fr": "VISIOMATIX (vidéo embarquée)",
+              "tn": "VISIOMATIX (فيديو في الكرهبة)"
+            }
+          ]
+        },
+        {
+          "id": "T-07",
+          "block": {
+            "fr": "Nos produits aujourd'hui et TUNAV ONE",
+            "tn": "المنتوجات متاعنا اليوم وTUNAV ONE"
+          },
+          "text": {
+            "fr": "Êtes-vous d'accord avec ces affirmations sur TUNAV ONE ?",
+            "tn": "قدّاش إنت موافق على الجمل هاذي على TUNAV ONE؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "OFFRE",
+            "MARQUE-INTERNE"
+          ],
+          "rows": [
+            {
+              "fr": "Je sais ce qu'est la stratégie produit TUNAV ONE.",
+              "tn": "نعرف شنوّة هي الاستراتيجية متاع المنتوجات TUNAV ONE."
+            },
+            {
+              "fr": "Un seul écosystème pour toutes nos solutions facilitera mon travail.",
+              "tn": "نظام واحد يجمع الحلول الكل باش يسهّلي الخدمة متاعي."
+            },
+            {
+              "fr": "J'aimerais être formé(e) sur les produits TUNAV ONE avant leur lancement.",
+              "tn": "نحب نتكوّن على منتوجات TUNAV ONE قبل الإطلاق."
+            },
+            {
+              "fr": "La nouvelle signature « One intelligent ecosystem » exprime bien ce que TUNAV veut devenir.",
+              "tn": "الشعار الجديد «One intelligent ecosystem» يعبّر مليح على شنوّة تحب تولّي TUNAV."
+            }
+          ]
+        },
+        {
+          "id": "T-08",
+          "block": {
+            "fr": "Notre présence digitale",
+            "tn": "الحضور الرقمي متاعنا"
+          },
+          "text": {
+            "fr": "Comment jugez-vous la qualité de nos canaux aujourd'hui ?",
+            "tn": "كيفاش تقيّم الجودة متاع المنصات متاعنا اليوم؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "level",
+          "feeds": [
+            "CANAUX"
+          ],
+          "rows": [
+            {
+              "fr": "Site web tunav.com",
+              "tn": "الموقع tunav.com"
+            },
+            {
+              "fr": "LinkedIn",
+              "tn": "LinkedIn"
+            },
+            {
+              "fr": "Facebook",
+              "tn": "Facebook"
+            },
+            {
+              "fr": "Instagram",
+              "tn": "Instagram"
+            },
+            {
+              "fr": "TikTok",
+              "tn": "TikTok"
+            },
+            {
+              "fr": "YouTube",
+              "tn": "YouTube"
+            }
+          ]
+        },
+        {
+          "id": "T-09",
+          "block": {
+            "fr": "Notre présence digitale",
+            "tn": "الحضور الرقمي متاعنا"
+          },
+          "text": {
+            "fr": "Sur les réseaux sociaux, quelle langue devons-nous utiliser pour parler à nos clients ?",
+            "tn": "في المنصات الاجتماعية، بأنا لغة لازمنا نحكيو مع الحرفاء؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "VOIX",
+            "CANAUX"
+          ],
+          "options": [
+            {
+              "fr": "Dialecte tunisien",
+              "tn": "تونسي"
+            },
+            {
+              "fr": "Mélange tunisien + français",
+              "tn": "خليط تونسي وفرنسية"
+            },
+            {
+              "fr": "Français",
+              "tn": "فرنسية"
+            },
+            {
+              "fr": "Selon le réseau",
+              "tn": "حسب المنصة"
+            }
+          ]
+        },
+        {
+          "id": "T-10",
+          "block": {
+            "fr": "Vous et la voix TUNAV",
+            "tn": "إنت والصوت متاع TUNAV"
+          },
+          "text": {
+            "fr": "Partagez-vous les publications de TUNAV sur vos propres réseaux ?",
+            "tn": "تبارتاجي البوستات متاع TUNAV على الحسابات متاعك؟"
+          },
+          "required": true,
+          "type": "scale",
+          "scale": "freq",
+          "feeds": [
+            "AMBASSADEURS"
+          ]
+        },
+        {
+          "id": "T-11",
+          "block": {
+            "fr": "Vous et la voix TUNAV",
+            "tn": "إنت والصوت متاع TUNAV"
+          },
+          "text": {
+            "fr": "Seriez-vous prêt(e) à participer à des contenus TUNAV (vidéo, photo, conseil métier) ?",
+            "tn": "تقبل تشارك في محتوى متاع TUNAV (فيديو، تصويرة، نصيحة في خدمتك)؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "AMBASSADEURS"
+          ],
+          "note": "aucune photo, vidéo ou voix d'un employé n'est utilisée sans accord écrit (droit à l'image).",
+          "options": [
+            {
+              "fr": "Oui, volontiers",
+              "tn": "إيه، بكل فرحة"
+            },
+            {
+              "fr": "Oui, si je suis accompagné(e)",
+              "tn": "إيه، كان فما شكون يعاوني"
+            },
+            {
+              "fr": "Plutôt en coulisses (idées, relecture)",
+              "tn": "نفضّل من ورا الكواليس (أفكار، مراجعة)"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        },
+        {
+          "id": "T-12",
+          "block": {
+            "fr": "Vous et la voix TUNAV",
+            "tn": "إنت والصوت متاع TUNAV"
+          },
+          "text": {
+            "fr": "Sur quels sujets pourriez-vous partager votre expertise ?",
+            "tn": "على أنا مواضيع تنجم تعطي الخبرة متاعك؟"
+          },
+          "required": false,
+          "type": "open-short",
+          "feeds": [
+            "AMBASSADEURS",
+            "CONTENUS"
+          ]
+        },
+        {
+          "id": "T-13",
+          "block": {
+            "fr": "Vous et la voix TUNAV",
+            "tn": "إنت والصوت متاع TUNAV"
+          },
+          "text": {
+            "fr": "Sur une échelle de 0 à 10, recommanderiez-vous les solutions TUNAV à une connaissance qui gère des véhicules ?",
+            "tn": "من 0 لـ10، تنصح بالحلول متاع TUNAV واحد تعرفو عندو كراهب يسيّر فيهم؟"
+          },
+          "required": true,
+          "type": "nps",
+          "feeds": [
+            "MARQUE-INTERNE",
+            "PREUVES"
+          ]
+        },
+        {
+          "id": "T-14",
+          "block": {
+            "fr": "Vous et la voix TUNAV",
+            "tn": "إنت والصوت متاع TUNAV"
+          },
+          "text": {
+            "fr": "Une idée, une critique ou un message pour la marque TUNAV ?",
+            "tn": "عندك فكرة، ملاحظة ولّا رسالة للعلامة TUNAV؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "OUVERT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": {
+        "fr": "Partie 2 · Contact direct avec les clients",
+        "tn": "الجزء 2 · تعامل مباشر مع الحرفاء"
+      },
+      "audience": "contact:yes",
+      "questions": [
+        {
+          "id": "C-01",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Avec quels types de clients êtes-vous en contact ?",
+            "tn": "مع أنا نوع من الحرفاء تتعامل؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Particuliers et indépendants",
+              "tn": "أفراد وخدّامة لروحهم"
+            },
+            {
+              "fr": "Petites flottes",
+              "tn": "أساطيل صغيرة"
+            },
+            {
+              "fr": "Entreprises et gestionnaires de parc",
+              "tn": "شركات ومسيّرين أساطيل"
+            },
+            {
+              "fr": "Transporteurs et logistique",
+              "tn": "ناقلين ولوجستيك"
+            },
+            {
+              "fr": "Flottes à forte consommation (engins, poids lourds)",
+              "tn": "أساطيل تستهلك برشا (آلات، كميونات)"
+            },
+            {
+              "fr": "Transport de personnes",
+              "tn": "نقل الأشخاص"
+            },
+            {
+              "fr": "Exploitants d'équipements et industrie",
+              "tn": "مستغلّين معدّات وصناعة"
+            },
+            {
+              "fr": "Clients de développement sur mesure / Odoo",
+              "tn": "حرفاء التطوير حسب الطلب / Odoo"
+            }
+          ]
+        },
+        {
+          "id": "C-02",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Quelles sont les 3 questions ou problèmes que les clients vous posent le plus souvent ?",
+            "tn": "شنوّة 3 أسئلة ولّا مشاكل يحكيو عليهم الحرفاء معاك أكثر حاجة؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "AUDIENCE",
+            "OBJECTIONS",
+            "CONTENUS"
+          ]
+        },
+        {
+          "id": "C-03",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Quels mots les clients utilisent-ils pour parler de nos solutions ? (ex. « GPS », « traceur », « balise », « puce », « caméra »…)",
+            "tn": "شنوّة الكلمات إلّي يستعملوها الحرفاء كي يحكيو على الحلول متاعنا؟ (مثلا «GPS»، «traceur»، «balise»، «puce»، «كاميرا»…)"
+          },
+          "required": true,
+          "type": "open-short",
+          "feeds": [
+            "VOIX",
+            "SEO"
+          ]
+        },
+        {
+          "id": "C-04",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Selon votre expérience avec les clients, êtes-vous d'accord ?",
+            "tn": "حسب التجربة متاعك مع الحرفاء، موافق؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "OFFRE",
+            "POSITIONNEMENT",
+            "VOIX"
+          ],
+          "rows": [
+            {
+              "fr": "Les clients savent que TUNAV fait plus que la localisation GPS.",
+              "tn": "الحرفاء يعرفو إلّي TUNAV تعمل أكثر من تحديد المكان بالـGPS."
+            },
+            {
+              "fr": "Nos produits sont présentés aux clients de façon claire et cohérente.",
+              "tn": "المنتوجات متاعنا تتقدّم للحرفاء بطريقة واضحة ومتناسقة."
+            },
+            {
+              "fr": "Les clients comprennent la différence entre Basic, Pro et Pro Plus.",
+              "tn": "الحرفاء يفهمو الفرق بين Basic وPro وPro Plus."
+            },
+            {
+              "fr": "Les clients savent que Webtrace, Minitrace et DashCam viennent tous de TUNAV.",
+              "tn": "الحرفاء يعرفو إلّي Webtrace وMinitrace وDashCam الكل من عند TUNAV."
+            }
+          ]
+        },
+        {
+          "id": "C-05",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Pourquoi un client choisit-il TUNAV plutôt qu'un concurrent ? Classez les 3 raisons principales.",
+            "tn": "علاش الحريف يختار TUNAV موش منافس آخر؟ رتّب أهم 3 أسباب."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "POSITIONNEMENT",
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Fiabilité des solutions",
+              "tn": "الحلول يعتمد عليها"
+            },
+            {
+              "fr": "Prix",
+              "tn": "السوم"
+            },
+            {
+              "fr": "Accompagnement et SAV",
+              "tn": "المرافقة وخدمة ما بعد البيع"
+            },
+            {
+              "fr": "Plusieurs solutions chez un seul fournisseur",
+              "tn": "برشا حلول عند نفس المزوّد"
+            },
+            {
+              "fr": "Expertise technique",
+              "tn": "الخبرة التقنية"
+            },
+            {
+              "fr": "Réactivité",
+              "tn": "سرعة الاستجابة"
+            },
+            {
+              "fr": "Réputation / ancienneté",
+              "tn": "السمعة والخبرة في السوق"
+            },
+            {
+              "fr": "Relation personnelle",
+              "tn": "العلاقة الشخصية"
+            },
+            {
+              "fr": "Solution sur mesure",
+              "tn": "حل حسب الطلب"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "C-06",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Quelles difficultés les clients rencontrent-ils parce que nos produits sont séparés (plusieurs applications, comptes, explications, factures…) ?",
+            "tn": "شنوّة الصعوبات إلّي يلقاوها الحرفاء على خاطر المنتوجات متاعنا مفرّقة (برشا تطبيقات، حسابات، شروحات، فواتير…)؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "OFFRE",
+            "OBJECTIONS",
+            "PARCOURS"
+          ]
+        },
+        {
+          "id": "C-07",
+          "block": {
+            "fr": "Nos clients",
+            "tn": "الحرفاء متاعنا"
+          },
+          "text": {
+            "fr": "Où nos clients et prospects s'informent-ils avant d'acheter ?",
+            "tn": "وين يلوّجو الحرفاء على المعلومة قبل ما يشريو؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "CANAUX",
+            "AUDIENCE",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Google",
+              "tn": "Google"
+            },
+            {
+              "fr": "LinkedIn",
+              "tn": "LinkedIn"
+            },
+            {
+              "fr": "Facebook",
+              "tn": "Facebook"
+            },
+            {
+              "fr": "Instagram",
+              "tn": "Instagram"
+            },
+            {
+              "fr": "TikTok",
+              "tn": "TikTok"
+            },
+            {
+              "fr": "YouTube",
+              "tn": "YouTube"
+            },
+            {
+              "fr": "WhatsApp",
+              "tn": "WhatsApp"
+            },
+            {
+              "fr": "Bouche-à-oreille",
+              "tn": "الكلام بين الناس"
+            },
+            {
+              "fr": "Salons et événements",
+              "tn": "المعارض والتظاهرات"
+            },
+            {
+              "fr": "Contact avec un commercial",
+              "tn": "الاتصال بالتجاري"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "C-08",
+          "block": {
+            "fr": "Preuves et contenus",
+            "tn": "الإثباتات والمحتوى"
+          },
+          "text": {
+            "fr": "Racontez une réussite client que vous connaissez : produit utilisé, situation avant, ce que TUNAV a fait, résultat (avec un chiffre s'il a été mesuré).",
+            "tn": "احكيلنا على نجاح مع حريف تعرفو: المنتوج إلّي استعملو، كيفاش كانت الحالة قبل، شنوّة عملت TUNAV، وشنوّة النتيجة (بالأرقام كان تقاست)."
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "PREUVES",
+            "CONTENUS"
+          ],
+          "note": "aucun nom de client ni chiffre ne sera publié sans autorisation écrite et justificatif."
+        },
+        {
+          "id": "C-09",
+          "block": {
+            "fr": "Preuves et contenus",
+            "tn": "الإثباتات والمحتوى"
+          },
+          "text": {
+            "fr": "Ce client accepterait-il de témoigner publiquement ?",
+            "tn": "الحريف هذا يقبل يحكي على تجربتو قدّام الناس؟"
+          },
+          "required": false,
+          "type": "single",
+          "feeds": [
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Oui, probablement",
+              "tn": "إيه، تقريبا"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            },
+            {
+              "fr": "Je n'ai pas d'exemple",
+              "tn": "ما عنديش مثال"
+            }
+          ]
+        },
+        {
+          "id": "C-10",
+          "block": {
+            "fr": "Preuves et contenus",
+            "tn": "الإثباتات والمحتوى"
+          },
+          "text": {
+            "fr": "Quels contenus vous aideraient le plus face aux clients ? (3 maximum)",
+            "tn": "أنا محتوى يعاونك أكثر مع الحرفاء؟ (3 على الأكثر)"
+          },
+          "required": true,
+          "type": "multi",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "CONTENUS",
+            "CANAUX"
+          ],
+          "options": [
+            {
+              "fr": "Tutoriels vidéo (Webtrace, Minitrace, DashCam)",
+              "tn": "فيديوهات تعليمية (Webtrace، Minitrace، DashCam)"
+            },
+            {
+              "fr": "Démonstrations des produits",
+              "tn": "عروض المنتوجات"
+            },
+            {
+              "fr": "Cas clients",
+              "tn": "تجارب حرفاء"
+            },
+            {
+              "fr": "Guides d'achat et comparatifs",
+              "tn": "أدلّة شراء ومقارنات"
+            },
+            {
+              "fr": "Conseils de sécurité routière",
+              "tn": "نصائح للسلامة في الطريق"
+            },
+            {
+              "fr": "Nouveautés produits (TUNAV ONE, FleetIQ)",
+              "tn": "الجديد في المنتوجات (TUNAV ONE، FleetIQ)"
+            },
+            {
+              "fr": "Questions fréquentes (FAQ)",
+              "tn": "الأسئلة إلّي تتعاود (FAQ)"
+            },
+            {
+              "fr": "Contenus humoristiques en dialecte",
+              "tn": "محتوى فيه ضحك بالتونسي"
+            },
+            {
+              "fr": "Offres et promotions",
+              "tn": "العروض والتخفيضات"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "N",
+      "title": {
+        "fr": "Partie 3 · Sans contact direct avec les clients",
+        "tn": "الجزء 3 · بلاش تعامل مباشر مع الحرفاء"
+      },
+      "audience": "contact:no",
+      "questions": [
+        {
+          "id": "N-01",
+          "text": {
+            "fr": "Comment recevez-vous les informations sur les clients et leurs besoins ?",
+            "tn": "كيفاش توصلك المعلومات على الحرفاء والاحتياجات متاعهم؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "PARCOURS",
+            "MARQUE-INTERNE"
+          ],
+          "options": [
+            {
+              "fr": "Par mes collègues (Commercial, SAV, Technique)",
+              "tn": "من عند زملائي (التجاري، SAV، التقني)"
+            },
+            {
+              "fr": "En réunion",
+              "tn": "في الاجتماعات"
+            },
+            {
+              "fr": "Par des tickets ou des outils internes",
+              "tn": "بالـtickets ولّا أدوات داخلية"
+            },
+            {
+              "fr": "Par email",
+              "tn": "بالإيميل"
+            },
+            {
+              "fr": "Par les Proxy Product Owners",
+              "tn": "من عند الـProxy Product Owners"
+            },
+            {
+              "fr": "Je n'en reçois presque pas",
+              "tn": "تقريبا ما توصلنيش"
+            }
+          ]
+        },
+        {
+          "id": "N-02",
+          "text": {
+            "fr": "Dans votre travail au quotidien, ces phrases sont-elles vraies pour vous ? Pour chaque phrase, choisissez votre niveau d'accord.",
+            "tn": "في الخدمة متاعك كل يوم، الجمل هاذي صحيحة بالنسبة ليك؟ لكل جملة، اختار قدّاش توافق عليها."
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "MARQUE-INTERNE",
+            "VOIX"
+          ],
+          "rows": [
+            {
+              "fr": "Je vois concrètement comment mon travail aide nos clients.",
+              "tn": "نشوف بالواضح كيفاش الخدمة متاعي تعاون حرفاء TUNAV."
+            },
+            {
+              "fr": "On me donne assez d'informations sur ce dont nos clients ont besoin.",
+              "tn": "يعطيوني معلومات كافية على شنوّة يحتاجو الحرفاء متاعنا."
+            },
+            {
+              "fr": "J'apprends les nouveautés produits avant qu'elles soient annoncées aux clients.",
+              "tn": "نعرف بالجديد في المنتوجات قبل ما يتعلن للحرفاء."
+            },
+            {
+              "fr": "Si un proche a des véhicules, je saurais lui expliquer nos produits.",
+              "tn": "كان واحد نعرفو عندو كراهب، نعرف نفسّرلو المنتوجات متاعنا."
+            }
+          ]
+        },
+        {
+          "id": "N-03",
+          "text": {
+            "fr": "Dans votre travail, quelles difficultés viennent du fait que nos produits et plateformes sont séparés (outils, données, comptes, process) ?",
+            "tn": "في الخدمة متاعك، شنوّة الصعوبات إلّي جاية على خاطر المنتوجات والمنصات متاعنا مفرّقة (أدوات، معطيات، حسابات، إجراءات)؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "OFFRE",
+            "PARCOURS"
+          ]
+        },
+        {
+          "id": "N-04",
+          "text": {
+            "fr": "Quelle information sur nos clients ou nos produits vous aiderait dans votre travail ?",
+            "tn": "شنوّة المعلومة على الحرفاء ولّا المنتوجات متاعنا إلّي تعاونك في خدمتك؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "CONTENUS",
+            "MARQUE-INTERNE"
+          ]
+        },
+        {
+          "id": "N-05",
+          "text": {
+            "fr": "Quels supports internes vous aideraient à parler de TUNAV et de ses produits ? (3 maximum)",
+            "tn": "شنوّة الوسائل الداخلية إلّي تعاونك باش تحكي على TUNAV والمنتوجات متاعها؟ (3 على الأكثر)"
+          },
+          "required": true,
+          "type": "multi",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "CONTENUS",
+            "AMBASSADEURS"
+          ],
+          "options": [
+            {
+              "fr": "Présentation simple des produits",
+              "tn": "تقديم بسيط للمنتوجات"
+            },
+            {
+              "fr": "Fiches produits d'une page",
+              "tn": "بطاقات منتوجات في صفحة وحدة"
+            },
+            {
+              "fr": "Vidéos de démonstration",
+              "tn": "فيديوهات تجريبية"
+            },
+            {
+              "fr": "FAQ interne",
+              "tn": "FAQ داخلية"
+            },
+            {
+              "fr": "Newsletter interne",
+              "tn": "نشرية داخلية"
+            },
+            {
+              "fr": "Formation TUNAV ONE",
+              "tn": "تكوين على TUNAV ONE"
+            }
+          ]
+        },
+        {
+          "id": "N-06",
+          "text": {
+            "fr": "Aimeriez-vous accompagner un collègue chez un client (visite commerciale, installation) pour mieux connaître le terrain ?",
+            "tn": "تحب تمشي مع زميل عند حريف (زيارة تجارية، تركيب) باش تعرف الميدان خير؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "MARQUE-INTERNE",
+            "AMBASSADEURS"
+          ],
+          "options": [
+            {
+              "fr": "Oui",
+              "tn": "إيه"
+            },
+            {
+              "fr": "Peut-être",
+              "tn": "يمكن"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DIR",
+      "title": {
+        "fr": "Partie 4 · Direction",
+        "tn": "الإدارة العامة"
+      },
+      "audience": "dept:direction",
+      "questions": [
+        {
+          "id": "DIR-01",
+          "text": {
+            "fr": "Quelle est votre ambition pour TUNAV à Tunis dans 3 ans (part de marché, image, produits) ?",
+            "tn": "شنوّة الطموح متاعك لـTUNAV في تونس بعد 3 سنين (الحصّة في السوق، الصورة، المنتوجات)؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "OBJECTIFS",
+            "POSITIONNEMENT"
+          ]
+        },
+        {
+          "id": "DIR-02",
+          "text": {
+            "fr": "Classez les priorités marketing des 12 prochains mois.",
+            "tn": "رتّب الأولويات التسويقية للـ12 شهر الجايين."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 7,
+          "feeds": [
+            "OBJECTIFS"
+          ],
+          "options": [
+            {
+              "fr": "Notoriété de la marque TUNAV",
+              "tn": "شهرة العلامة TUNAV"
+            },
+            {
+              "fr": "Lancement de FleetIQ",
+              "tn": "إطلاق FleetIQ"
+            },
+            {
+              "fr": "Passage des clients actuels vers TUNAV ONE",
+              "tn": "نقل الحرفاء الحاليين لـTUNAV ONE"
+            },
+            {
+              "fr": "Leads entreprises (B2B)",
+              "tn": "حرفاء جدد من الشركات (B2B)"
+            },
+            {
+              "fr": "Ventes aux particuliers (B2C)",
+              "tn": "البيع للأفراد (B2C)"
+            },
+            {
+              "fr": "Fidélisation des clients actuels",
+              "tn": "المحافظة على الحرفاء الحاليين"
+            },
+            {
+              "fr": "Marque employeur / recrutement",
+              "tn": "صورة TUNAV كمشغّل / الانتداب"
+            }
+          ]
+        },
+        {
+          "id": "DIR-03",
+          "text": {
+            "fr": "Quels sont les 3 segments clients prioritaires ?",
+            "tn": "شنوّة أهم 3 أنواع حرفاء لازم نركّزو عليهم؟"
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Particuliers et indépendants",
+              "tn": "أفراد وخدّامة لروحهم"
+            },
+            {
+              "fr": "Petites flottes",
+              "tn": "أساطيل صغيرة"
+            },
+            {
+              "fr": "Entreprises et gestionnaires de parc",
+              "tn": "شركات ومسيّرين أساطيل"
+            },
+            {
+              "fr": "Transporteurs et logistique",
+              "tn": "ناقلين ولوجستيك"
+            },
+            {
+              "fr": "Flottes à forte consommation (engins, poids lourds)",
+              "tn": "أساطيل تستهلك برشا (آلات، كميونات)"
+            },
+            {
+              "fr": "Transport de personnes",
+              "tn": "نقل الأشخاص"
+            },
+            {
+              "fr": "Exploitants d'équipements et industrie",
+              "tn": "مستغلّين معدّات وصناعة"
+            },
+            {
+              "fr": "Clients de développement sur mesure / Odoo",
+              "tn": "حرفاء التطوير حسب الطلب / Odoo"
+            }
+          ]
+        },
+        {
+          "id": "DIR-04",
+          "text": {
+            "fr": "Quand FleetIQ doit-il être annoncé publiquement ?",
+            "tn": "وقتاش لازم نعلنو على FleetIQ قدّام الناس؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "OBJECTIFS",
+            "CANAUX",
+            "REGLES"
+          ],
+          "options": [
+            {
+              "fr": "Dès maintenant (teasing)",
+              "tn": "من توا (تشويق)"
+            },
+            {
+              "fr": "Au lancement officiel",
+              "tn": "نهار الإطلاق الرسمي"
+            },
+            {
+              "fr": "Après le passage des clients actuels",
+              "tn": "بعد ما ينتقلو الحرفاء الحاليين"
+            },
+            {
+              "fr": "À décider",
+              "tn": "مازال ما تقرّرش"
+            }
+          ]
+        },
+        {
+          "id": "DIR-05",
+          "text": {
+            "fr": "Que devons-nous dire aux clients actuels de Webtrace, Minitrace et DashCam pendant le passage à TUNAV ONE ?",
+            "tn": "شنوّة لازمنا نقولو للحرفاء الحاليين متاع Webtrace وMinitrace وDashCam وقت الانتقال لـTUNAV ONE؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "VOIX",
+            "OFFRE",
+            "PARCOURS"
+          ]
+        },
+        {
+          "id": "DIR-06",
+          "text": {
+            "fr": "Quel budget mensuel indicatif pour le marketing digital (publicité comprise) ?",
+            "tn": "قدّاش الميزانية الشهرية التقريبية للتسويق الرقمي (مع الإشهار)؟"
+          },
+          "required": false,
+          "type": "single",
+          "feeds": [
+            "OBJECTIFS",
+            "RESSOURCES"
+          ],
+          "note": "information de cadrage uniquement ; aucune dépense sans approbation enregistrée.",
+          "options": [
+            {
+              "fr": "Moins de 500 TND",
+              "tn": "أقل من 500 دينار"
+            },
+            {
+              "fr": "500 à 2 000 TND",
+              "tn": "من 500 لـ2000 دينار"
+            },
+            {
+              "fr": "2 000 à 5 000 TND",
+              "tn": "من 2000 لـ5000 دينار"
+            },
+            {
+              "fr": "Plus de 5 000 TND",
+              "tn": "أكثر من 5000 دينار"
+            },
+            {
+              "fr": "À définir",
+              "tn": "مازال ما تحدّدش"
+            }
+          ]
+        },
+        {
+          "id": "DIR-07",
+          "text": {
+            "fr": "Que TUNAV ne doit-elle jamais dire, promettre ou montrer en public ?",
+            "tn": "شنوّة الحاجات إلّي TUNAV ما لازمهاش أبدا تقولها، توعد بيها ولّا توريها للناس؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "VOIX",
+            "REGLES"
+          ]
+        },
+        {
+          "id": "DIR-08",
+          "text": {
+            "fr": "Qui valide les publications de TUNAV ?",
+            "tn": "شكون يصادق على البوستات متاع TUNAV؟"
+          },
+          "required": true,
+          "type": "single",
+          "other": true,
+          "feeds": [
+            "REGLES"
+          ],
+          "options": [
+            {
+              "fr": "Le responsable Product & Innovation seul",
+              "tn": "مسؤول المنتوج والابتكار وحدو"
+            },
+            {
+              "fr": "Le responsable Product & Innovation, et moi pour les sujets sensibles",
+              "tn": "مسؤول المنتوج والابتكار، وأنا في المواضيع الحساسة"
+            },
+            {
+              "fr": "Moi pour toutes les publications",
+              "tn": "أنا في البوستات الكل"
+            }
+          ]
+        },
+        {
+          "id": "DIR-09",
+          "text": {
+            "fr": "Souhaitez-vous prendre la parole au nom de TUNAV sur LinkedIn ?",
+            "tn": "تحب تحكي باسم TUNAV على LinkedIn؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "AMBASSADEURS",
+            "CANAUX"
+          ],
+          "options": [
+            {
+              "fr": "Oui, régulièrement",
+              "tn": "إيه، بصفة منتظمة"
+            },
+            {
+              "fr": "Oui, ponctuellement",
+              "tn": "إيه، من وقت لآخر"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        },
+        {
+          "id": "DIR-10",
+          "text": {
+            "fr": "Quels chiffres officiels pouvons-nous publier (année de création, véhicules suivis, clients…) et où est leur justificatif ?",
+            "tn": "شنوّة الأرقام الرسمية إلّي نجمو ننشروها (عام التأسيس، عدد الكراهب المتّبعة، الحرفاء…) ووين نلقاو الإثبات متاعها؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "PREUVES"
+          ],
+          "note": "la date « depuis 2004 » n'est pas utilisée avant confirmation (Brand Book, ton de voix)."
+        }
+      ]
+    },
+    {
+      "id": "COM",
+      "title": {
+        "fr": "Partie 4 · Commercial",
+        "tn": "التجاري"
+      },
+      "audience": "dept:sales",
+      "questions": [
+        {
+          "id": "COM-01",
+          "text": {
+            "fr": "Quelles offres actuelles vendez-vous le plus ? Classez les 3 premières.",
+            "tn": "أنا عروض حالية تبيع منها أكثر؟ رتّب الـ3 الأوائل."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "feeds": [
+            "OFFRE",
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Webtrace Basic",
+              "tn": "Webtrace Basic"
+            },
+            {
+              "fr": "Webtrace Pro",
+              "tn": "Webtrace Pro"
+            },
+            {
+              "fr": "Webtrace Pro Plus (BUSCAN)",
+              "tn": "Webtrace Pro Plus (BUSCAN)"
+            },
+            {
+              "fr": "Minitrace",
+              "tn": "Minitrace"
+            },
+            {
+              "fr": "DashCam",
+              "tn": "DashCam"
+            },
+            {
+              "fr": "Développement d'applications sur mesure",
+              "tn": "تطوير تطبيقات حسب الطلب"
+            },
+            {
+              "fr": "Produits IoT et industriels",
+              "tn": "منتوجات IoT وصناعية"
+            }
+          ]
+        },
+        {
+          "id": "COM-02",
+          "text": {
+            "fr": "Quels segments rapportent le plus aujourd'hui ? Classez les 3 premiers.",
+            "tn": "أنا أنواع حرفاء يجيبو أكثر مدخول اليوم؟ رتّب الـ3 الأوائل."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Particuliers et indépendants",
+              "tn": "أفراد وخدّامة لروحهم"
+            },
+            {
+              "fr": "Petites flottes",
+              "tn": "أساطيل صغيرة"
+            },
+            {
+              "fr": "Entreprises et gestionnaires de parc",
+              "tn": "شركات ومسيّرين أساطيل"
+            },
+            {
+              "fr": "Transporteurs et logistique",
+              "tn": "ناقلين ولوجستيك"
+            },
+            {
+              "fr": "Flottes à forte consommation (engins, poids lourds)",
+              "tn": "أساطيل تستهلك برشا (آلات، كميونات)"
+            },
+            {
+              "fr": "Transport de personnes",
+              "tn": "نقل الأشخاص"
+            },
+            {
+              "fr": "Exploitants d'équipements et industrie",
+              "tn": "مستغلّين معدّات وصناعة"
+            },
+            {
+              "fr": "Clients de développement sur mesure / Odoo",
+              "tn": "حرفاء التطوير حسب الطلب / Odoo"
+            }
+          ]
+        },
+        {
+          "id": "COM-03",
+          "text": {
+            "fr": "Qui décide de l'achat chez le client (poste, taille d'entreprise) et qui l'influence ?",
+            "tn": "شكون ياخذ قرار الشراء عند الحريف (الخطة، حجم الشركة) وشكون يأثّر عليه؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "AUDIENCE",
+            "PARCOURS"
+          ]
+        },
+        {
+          "id": "COM-04",
+          "text": {
+            "fr": "Quelles sont les 3 objections les plus fréquentes ?",
+            "tn": "شنوّة أكثر 3 اعتراضات تسمعهم من الحرفاء؟"
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "OBJECTIONS",
+            "CONTENUS"
+          ],
+          "options": [
+            {
+              "fr": "Prix trop élevé",
+              "tn": "السوم غالي"
+            },
+            {
+              "fr": "Déjà équipé chez un concurrent",
+              "tn": "عندو حل عند منافس"
+            },
+            {
+              "fr": "Méfiance des conducteurs (vie privée)",
+              "tn": "السوّاقة ما يحبّوش يتراقبو (الحياة الخاصة)"
+            },
+            {
+              "fr": "Retour sur investissement pas clair",
+              "tn": "الفايدة مقارنة بالسوم موش واضحة"
+            },
+            {
+              "fr": "Différence entre nos offres pas claire",
+              "tn": "الفرق بين العروض متاعنا موش واضح"
+            },
+            {
+              "fr": "Solution jugée compliquée",
+              "tn": "يحسّ الحل معقّد"
+            },
+            {
+              "fr": "Délai d'installation",
+              "tn": "وقت التركيب"
+            },
+            {
+              "fr": "Veut d'abord un essai",
+              "tn": "يحب يجرّب قبل"
+            },
+            {
+              "fr": "Pas prioritaire / pas de budget",
+              "tn": "موش أولوية / ما عندوش ميزانية"
+            }
+          ]
+        },
+        {
+          "id": "COM-05",
+          "text": {
+            "fr": "Comment répondez-vous aujourd'hui à l'objection n°1 ?",
+            "tn": "كيفاش تجاوب اليوم على الاعتراض رقم 1؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "VOIX",
+            "PREUVES",
+            "OBJECTIONS"
+          ]
+        },
+        {
+          "id": "COM-06",
+          "text": {
+            "fr": "Face à nos concurrents, où se situe TUNAV ?",
+            "tn": "مقارنة بالمنافسين، وين تجي TUNAV؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "compare",
+          "other": true,
+          "feeds": [
+            "CONCURRENCE",
+            "POSITIONNEMENT"
+          ],
+          "note": "concurrents de l'analyse concurrentielle du 11/11/2026 ; le répondant peut ajouter jusqu'à 3 autres concurrents et les noter sur la même échelle.",
+          "rows": [
+            {
+              "fr": "GPS Tunisie",
+              "tn": "GPS Tunisie"
+            },
+            {
+              "fr": "GPS Auto Pro",
+              "tn": "GPS Auto Pro"
+            },
+            {
+              "fr": "Amena GPS",
+              "tn": "Amena GPS"
+            },
+            {
+              "fr": "GPS.TN",
+              "tn": "GPS.TN"
+            },
+            {
+              "fr": "Tunisia Fleet Management",
+              "tn": "Tunisia Fleet Management"
+            }
+          ]
+        },
+        {
+          "id": "COM-07",
+          "text": {
+            "fr": "À quelle fréquence les clients demandent-ils ces options ?",
+            "tn": "قدّاش من مرة الحرفاء يطلبو الخيارات هاذي؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "freq",
+          "feeds": [
+            "OFFRE",
+            "AUDIENCE"
+          ],
+          "note": "options intégrables des packs FleetIQ (visuel « Offres FleetIQ »).",
+          "rows": [
+            {
+              "fr": "Alarme (intrusion / mouvement)",
+              "tn": "إنذار (دخول / حركة)"
+            },
+            {
+              "fr": "Suivi batterie (état / tension)",
+              "tn": "متابعة البطارية (الحالة / الفولطاج)"
+            },
+            {
+              "fr": "TPMS (pression / température des pneus)",
+              "tn": "TPMS (ضغط / حرارة العجلات)"
+            },
+            {
+              "fr": "Température / humidité (transport sensible)",
+              "tn": "الحرارة / الرطوبة (نقل حسّاس)"
+            },
+            {
+              "fr": "Balise / Beacon (actifs, remorques)",
+              "tn": "Balise / Beacon (المعدّات، الريمورك)"
+            },
+            {
+              "fr": "Identification du chauffeur",
+              "tn": "التعرّف على السوّاق"
+            },
+            {
+              "fr": "Vidéo embarquée",
+              "tn": "فيديو في الكرهبة"
+            }
+          ]
+        },
+        {
+          "id": "COM-08",
+          "text": {
+            "fr": "Les noms des futurs packs FleetIQ seront-ils faciles à comprendre et à prononcer pour un client à Tunis ?",
+            "tn": "الأسامي متاع الـpacks الجديدة FleetIQ باش تكون ساهلة على الحريف في تونس باش يفهمها وينطقها؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "VOIX",
+            "OFFRE"
+          ],
+          "note": "noms internes en préparation ; SECURIT = protection du véhicule, PRO = gestion de flotte, FUELRESCUE = maîtrise du carburant, MECHANIC = maintenance, VISIOMATIX = vidéo embarquée.",
+          "rows": [
+            {
+              "fr": "SECURIT (protection du véhicule)",
+              "tn": "SECURIT (حماية الكرهبة)"
+            },
+            {
+              "fr": "PRO (gestion de flotte)",
+              "tn": "PRO (تسيير الأسطول)"
+            },
+            {
+              "fr": "FUELRESCUE (maîtrise du carburant)",
+              "tn": "FUELRESCUE (التحكّم في المازوط)"
+            },
+            {
+              "fr": "MECHANIC (maintenance intelligente)",
+              "tn": "MECHANIC (الصيانة الذكية)"
+            },
+            {
+              "fr": "VISIOMATIX (vidéo embarquée)",
+              "tn": "VISIOMATIX (فيديو في الكرهبة)"
+            }
+          ]
+        },
+        {
+          "id": "COM-09",
+          "text": {
+            "fr": "D'où viennent vos prospects aujourd'hui ?",
+            "tn": "منين يجيوك الحرفاء الجدد اليوم؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "CANAUX",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Recommandation d'un client",
+              "tn": "حريف نصح بينا"
+            },
+            {
+              "fr": "Prospection (appels, visites)",
+              "tn": "البحث على حرفاء (تلفونات، زيارات)"
+            },
+            {
+              "fr": "Site web",
+              "tn": "الموقع"
+            },
+            {
+              "fr": "LinkedIn",
+              "tn": "LinkedIn"
+            },
+            {
+              "fr": "Facebook / Instagram",
+              "tn": "Facebook / Instagram"
+            },
+            {
+              "fr": "TikTok",
+              "tn": "TikTok"
+            },
+            {
+              "fr": "Salons et événements",
+              "tn": "المعارض والتظاهرات"
+            },
+            {
+              "fr": "Partenaires",
+              "tn": "الشركاء"
+            },
+            {
+              "fr": "Appels d'offres",
+              "tn": "طلبات العروض"
+            }
+          ]
+        },
+        {
+          "id": "COM-10",
+          "text": {
+            "fr": "Combien de temps dure en moyenne une vente B2B, du premier contact à la signature ?",
+            "tn": "قدّاش تدوم البيعة مع شركة في المعدّل، من أول اتصال حتى للإمضاء؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Moins de 2 semaines",
+              "tn": "أقل من جمعتين"
+            },
+            {
+              "fr": "2 à 4 semaines",
+              "tn": "من جمعتين لشهر"
+            },
+            {
+              "fr": "1 à 3 mois",
+              "tn": "من شهر لثلاثة شهور"
+            },
+            {
+              "fr": "Plus de 3 mois",
+              "tn": "أكثر من ثلاثة شهور"
+            }
+          ]
+        },
+        {
+          "id": "COM-11",
+          "text": {
+            "fr": "Quels supports vous manquent pour vendre ?",
+            "tn": "شنوّة الوسائل إلّي تنقصك باش تبيع؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "CONTENUS",
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Plaquette commerciale",
+              "tn": "كتيّب تجاري"
+            },
+            {
+              "fr": "Présentation (PowerPoint)",
+              "tn": "عرض (PowerPoint)"
+            },
+            {
+              "fr": "Fiche par offre et par pack",
+              "tn": "بطاقة لكل عرض ولكل pack"
+            },
+            {
+              "fr": "Tableau comparatif de nos offres",
+              "tn": "جدول مقارنة بين العروض متاعنا"
+            },
+            {
+              "fr": "Cas clients",
+              "tn": "تجارب حرفاء"
+            },
+            {
+              "fr": "Comparatif concurrents",
+              "tn": "مقارنة مع المنافسين"
+            },
+            {
+              "fr": "Vidéo de démonstration",
+              "tn": "فيديو تجريبي"
+            },
+            {
+              "fr": "Simulateur d'économies (carburant, maintenance)",
+              "tn": "محاكي للتوفير (المازوط، الصيانة)"
+            }
+          ]
+        },
+        {
+          "id": "COM-12",
+          "text": {
+            "fr": "Quels types de partenariats avez-vous ou visez-vous (revendeurs, intégrateurs, constructeurs…) ?",
+            "tn": "أنا نوع من الشراكات عندكم ولّا تحبّو تعملوها (موزّعين، مدمجين، مصنّعين…)؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "AUDIENCE",
+            "OFFRE"
+          ]
+        },
+        {
+          "id": "COM-13",
+          "text": {
+            "fr": "Avons-nous des clients de référence qui acceptent d'être cités publiquement ?",
+            "tn": "عندنا حرفاء مرجعيين يقبلو نذكرو أساميهم قدّام الناس؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Oui, avec un accord écrit",
+              "tn": "إيه، بموافقة مكتوبة"
+            },
+            {
+              "fr": "Oui, mais l'accord est à demander",
+              "tn": "إيه، أما لازم نطلبو الموافقة"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SAV",
+      "title": {
+        "fr": "Partie 4 · Service après-vente et installation",
+        "tn": "خدمة ما بعد البيع والتركيب"
+      },
+      "audience": "dept:sav",
+      "questions": [
+        {
+          "id": "SAV-01",
+          "text": {
+            "fr": "Quels produits génèrent le plus de demandes SAV ? Classez les 3 premiers.",
+            "tn": "أنا منتوجات تجيب أكثر طلبات SAV؟ رتّب الـ3 الأوائل."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "feeds": [
+            "OFFRE",
+            "CONTENUS"
+          ],
+          "options": [
+            {
+              "fr": "Webtrace Basic",
+              "tn": "Webtrace Basic"
+            },
+            {
+              "fr": "Webtrace Pro",
+              "tn": "Webtrace Pro"
+            },
+            {
+              "fr": "Webtrace Pro Plus (BUSCAN)",
+              "tn": "Webtrace Pro Plus (BUSCAN)"
+            },
+            {
+              "fr": "Minitrace",
+              "tn": "Minitrace"
+            },
+            {
+              "fr": "DashCam",
+              "tn": "DashCam"
+            },
+            {
+              "fr": "Produits IoT et industriels",
+              "tn": "منتوجات IoT وصناعية"
+            }
+          ]
+        },
+        {
+          "id": "SAV-02",
+          "text": {
+            "fr": "Classez les 3 motifs de contact les plus fréquents.",
+            "tn": "رتّب أكثر 3 أسباب علاش يتّصلو بيكم الحرفاء."
+          },
+          "required": true,
+          "type": "ranking",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "CONTENUS",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Boîtier hors ligne",
+              "tn": "البواطة ما تبعثش"
+            },
+            {
+              "fr": "Problème d'application ou de connexion",
+              "tn": "مشكل في التطبيقة ولّا الدخول"
+            },
+            {
+              "fr": "Question d'utilisation",
+              "tn": "سؤال على الاستعمال"
+            },
+            {
+              "fr": "Alerte non reçue",
+              "tn": "تنبيه ما وصلش"
+            },
+            {
+              "fr": "Demande d'installation ou de déplacement",
+              "tn": "طلب تركيب ولّا تنقّل"
+            },
+            {
+              "fr": "Facturation",
+              "tn": "الفاتورة"
+            }
+          ]
+        },
+        {
+          "id": "SAV-03",
+          "text": {
+            "fr": "Quelles questions reviennent souvent et pourraient être évitées par une vidéo ou une FAQ ?",
+            "tn": "شنوّة الأسئلة إلّي تتعاود ديما ونجمو نتفادوها بفيديو ولّا FAQ؟"
+          },
+          "required": true,
+          "type": "open-long",
+          "feeds": [
+            "CONTENUS"
+          ]
+        },
+        {
+          "id": "SAV-04",
+          "text": {
+            "fr": "Délai moyen entre la commande et l'installation chez le client ?",
+            "tn": "قدّاش الوقت في المعدّل بين الكوموند والتركيب عند الحريف؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Moins de 48 h",
+              "tn": "أقل من 48 ساعة"
+            },
+            {
+              "fr": "2 à 5 jours",
+              "tn": "من 2 لـ5 أيام"
+            },
+            {
+              "fr": "1 à 2 semaines",
+              "tn": "من جمعة لجمعتين"
+            },
+            {
+              "fr": "Plus de 2 semaines",
+              "tn": "أكثر من جمعتين"
+            },
+            {
+              "fr": "Très variable",
+              "tn": "يتبدّل برشا"
+            }
+          ]
+        },
+        {
+          "id": "SAV-05",
+          "text": {
+            "fr": "Délai moyen de résolution d'une demande SAV ?",
+            "tn": "قدّاش الوقت في المعدّل باش يتحلّ طلب SAV؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Dans la journée",
+              "tn": "في نفس النهار"
+            },
+            {
+              "fr": "1 à 2 jours",
+              "tn": "من نهار لنهارين"
+            },
+            {
+              "fr": "3 à 7 jours",
+              "tn": "من 3 لـ7 أيام"
+            },
+            {
+              "fr": "Plus d'une semaine",
+              "tn": "أكثر من جمعة"
+            },
+            {
+              "fr": "Très variable",
+              "tn": "يتبدّل برشا"
+            }
+          ]
+        },
+        {
+          "id": "SAV-06",
+          "text": {
+            "fr": "Ces délais sont-ils mesurés ?",
+            "tn": "الأوقات هاذي تتقاس؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES",
+            "MESURE"
+          ],
+          "note": "un délai n'est publié que s'il est mesuré (Brand Book, message clé 7).",
+          "options": [
+            {
+              "fr": "Oui, dans un outil (tickets)",
+              "tn": "إيه، في برنامج (tickets)"
+            },
+            {
+              "fr": "Estimation seulement",
+              "tn": "تقدير برك"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        },
+        {
+          "id": "SAV-07",
+          "text": {
+            "fr": "Quelles options installez-vous le plus souvent ?",
+            "tn": "أنا خيارات تركّبها أكثر؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "freq",
+          "feeds": [
+            "OFFRE",
+            "PREUVES"
+          ],
+          "rows": [
+            {
+              "fr": "Alarme (intrusion / mouvement)",
+              "tn": "إنذار (دخول / حركة)"
+            },
+            {
+              "fr": "Suivi batterie (état / tension)",
+              "tn": "متابعة البطارية (الحالة / الفولطاج)"
+            },
+            {
+              "fr": "TPMS (pression / température des pneus)",
+              "tn": "TPMS (ضغط / حرارة العجلات)"
+            },
+            {
+              "fr": "Température / humidité (transport sensible)",
+              "tn": "الحرارة / الرطوبة (نقل حسّاس)"
+            },
+            {
+              "fr": "Balise / Beacon (actifs, remorques)",
+              "tn": "Balise / Beacon (المعدّات، الريمورك)"
+            },
+            {
+              "fr": "Identification du chauffeur",
+              "tn": "التعرّف على السوّاق"
+            },
+            {
+              "fr": "Caméra / DashCam",
+              "tn": "كاميرا / DashCam"
+            },
+            {
+              "fr": "Lecteur CAN (BUSCAN)",
+              "tn": "قارئ CAN (BUSCAN)"
+            }
+          ]
+        },
+        {
+          "id": "SAV-08",
+          "text": {
+            "fr": "Selon vous, les clients sont-ils satisfaits de…",
+            "tn": "حسب رأيك، الحرفاء فرحانين بـ…"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "PREUVES",
+            "VOIX"
+          ],
+          "rows": [
+            {
+              "fr": "la qualité de l'installation",
+              "tn": "جودة التركيب"
+            },
+            {
+              "fr": "la prise en main de Webtrace",
+              "tn": "كيفاش يتعلّمو Webtrace"
+            },
+            {
+              "fr": "la prise en main de Minitrace",
+              "tn": "كيفاش يتعلّمو Minitrace"
+            },
+            {
+              "fr": "notre réactivité",
+              "tn": "السرعة متاعنا"
+            },
+            {
+              "fr": "notre politesse et notre accompagnement",
+              "tn": "الأخلاق والمرافقة متاعنا"
+            }
+          ]
+        },
+        {
+          "id": "SAV-09",
+          "text": {
+            "fr": "Pouvons-nous photographier ou filmer une installation chez un client ?",
+            "tn": "نجمو نصوّرو تركيب عند حريف؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "CONTENUS",
+            "REGLES"
+          ],
+          "options": [
+            {
+              "fr": "Oui, avec l'accord du client",
+              "tn": "إيه، بموافقة الحريف"
+            },
+            {
+              "fr": "Oui, sans logo du client ni plaque visible",
+              "tn": "إيه، من غير لوغو الحريف وبلاش ما تبان النمرة"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "SAV-10",
+          "text": {
+            "fr": "Racontez un moment où un client vous a remercié : qu'a-t-il dit ?",
+            "tn": "احكيلنا على مرة حريف شكرك: شنوّة قال؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "PREUVES",
+            "VOIX"
+          ]
+        },
+        {
+          "id": "SAV-11",
+          "text": {
+            "fr": "Par quels canaux les clients contactent-ils le SAV ?",
+            "tn": "كيفاش يتّصلو الحرفاء بالـSAV؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "CANAUX",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Téléphone",
+              "tn": "التلفون"
+            },
+            {
+              "fr": "WhatsApp",
+              "tn": "WhatsApp"
+            },
+            {
+              "fr": "Email",
+              "tn": "الإيميل"
+            },
+            {
+              "fr": "Sur place",
+              "tn": "في البلاصة"
+            },
+            {
+              "fr": "Application",
+              "tn": "التطبيقة"
+            },
+            {
+              "fr": "Messenger / réseaux sociaux",
+              "tn": "Messenger / المنصات الاجتماعية"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ADM",
+      "title": {
+        "fr": "Partie 4 · Administration, RH et Finance",
+        "tn": "الإدارة والموارد البشرية والمالية"
+      },
+      "audience": "dept:administrative",
+      "questions": [
+        {
+          "id": "ADM-01",
+          "text": {
+            "fr": "Combien de recrutements sont prévus dans les 12 prochains mois ?",
+            "tn": "قدّاش من انتداب مبرمج في الـ12 شهر الجايين؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "MARQUE-EMPLOYEUR"
+          ],
+          "options": [
+            {
+              "fr": "Aucun",
+              "tn": "حتى واحد"
+            },
+            {
+              "fr": "1 à 3",
+              "tn": "من 1 لـ3"
+            },
+            {
+              "fr": "4 à 10",
+              "tn": "من 4 لـ10"
+            },
+            {
+              "fr": "Plus de 10",
+              "tn": "أكثر من 10"
+            }
+          ]
+        },
+        {
+          "id": "ADM-02",
+          "text": {
+            "fr": "Quels profils sont les plus difficiles à recruter ?",
+            "tn": "شنوّة البروفيلات إلّي صعيب تلقاهم للانتداب؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "MARQUE-EMPLOYEUR",
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Développeurs",
+              "tn": "مطوّرين"
+            },
+            {
+              "fr": "DevOps",
+              "tn": "DevOps"
+            },
+            {
+              "fr": "Experts Odoo",
+              "tn": "خبراء Odoo"
+            },
+            {
+              "fr": "Data / BI",
+              "tn": "Data / BI"
+            },
+            {
+              "fr": "Techniciens installateurs",
+              "tn": "تقنيين تركيب"
+            },
+            {
+              "fr": "Commerciaux",
+              "tn": "تجاريين"
+            }
+          ]
+        },
+        {
+          "id": "ADM-03",
+          "text": {
+            "fr": "Qu'est-ce qui attire et retient les talents chez TUNAV ?",
+            "tn": "شنوّة إلّي يجلب ويخلّي الكفاءات في TUNAV؟"
+          },
+          "required": true,
+          "type": "multi",
+          "max": 3,
+          "other": true,
+          "feeds": [
+            "MARQUE-EMPLOYEUR",
+            "MARQUE-INTERNE"
+          ],
+          "options": [
+            {
+              "fr": "Projets innovants (TUNAV ONE…)",
+              "tn": "مشاريع فيها ابتكار (TUNAV ONE…)"
+            },
+            {
+              "fr": "Ambiance et esprit d'équipe",
+              "tn": "الجو وروح الفريق"
+            },
+            {
+              "fr": "Formation",
+              "tn": "التكوين"
+            },
+            {
+              "fr": "Évolution de carrière",
+              "tn": "التطوّر في المسيرة"
+            },
+            {
+              "fr": "Stabilité",
+              "tn": "الاستقرار"
+            },
+            {
+              "fr": "Rémunération",
+              "tn": "الأجر"
+            }
+          ]
+        },
+        {
+          "id": "ADM-04",
+          "text": {
+            "fr": "Existe-t-il une autorisation de droit à l'image signée par les employés ?",
+            "tn": "فما ورقة موافقة على استعمال التصاور ممضية من الموظفين؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "REGLES",
+            "AMBASSADEURS"
+          ],
+          "options": [
+            {
+              "fr": "Oui, signée par tous",
+              "tn": "إيه، ممضية من الكل"
+            },
+            {
+              "fr": "Oui, pour une partie des employés",
+              "tn": "إيه، لجزء من الموظفين"
+            },
+            {
+              "fr": "Non, à créer",
+              "tn": "لا، لازم نعملوها"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "ADM-05",
+          "text": {
+            "fr": "Quelles formules d'abonnement, d'engagement ou de renouvellement (Webtrace, Minitrace, DashCam) créent des malentendus avec les clients ?",
+            "tn": "أنا صيغ اشتراك، التزام ولّا تجديد (Webtrace، Minitrace، DashCam) تعمل سوء فهم مع الحرفاء؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "OFFRE",
+            "VOIX",
+            "OBJECTIONS"
+          ],
+          "note": "aide à écrire des offres TUNAV ONE claires et à éviter les promesses ambiguës."
+        },
+        {
+          "id": "ADM-06",
+          "text": {
+            "fr": "Côté recouvrement, quels types de clients posent le moins de difficultés de paiement ?",
+            "tn": "من جهة الاستخلاص، أنا نوع من الحرفاء يخلّصو بأقل مشاكل؟"
+          },
+          "required": false,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "AUDIENCE"
+          ],
+          "note": "réponse agrégée par type de client uniquement – aucun nom de client.",
+          "options": [
+            {
+              "fr": "Particuliers et indépendants",
+              "tn": "أفراد وخدّامة لروحهم"
+            },
+            {
+              "fr": "Petites flottes",
+              "tn": "أساطيل صغيرة"
+            },
+            {
+              "fr": "Entreprises et gestionnaires de parc",
+              "tn": "شركات ومسيّرين أساطيل"
+            },
+            {
+              "fr": "Transporteurs et logistique",
+              "tn": "ناقلين ولوجستيك"
+            },
+            {
+              "fr": "Secteur public",
+              "tn": "القطاع العام"
+            },
+            {
+              "fr": "Clients de développement sur mesure / Odoo",
+              "tn": "حرفاء التطوير حسب الطلب / Odoo"
+            }
+          ]
+        },
+        {
+          "id": "ADM-07",
+          "text": {
+            "fr": "Où se trouvent les informations légales officielles et à jour de TUNAV (raison sociale, forme juridique) à utiliser sur le site et les documents ?",
+            "tn": "وين نلقاو المعلومات القانونية الرسمية والمحيّنة متاع TUNAV (الإسم القانوني، الشكل القانوني) باش نستعملوها في الموقع والوثائق؟"
+          },
+          "required": false,
+          "type": "open-short",
+          "feeds": [
+            "REGLES"
+          ],
+          "note": "indiquer l'emplacement du document, ne pas saisir de numéro d'identification."
+        }
+      ]
+    },
+    {
+      "id": "TEC",
+      "title": {
+        "fr": "Partie 4 · Technique",
+        "tn": "التقني"
+      },
+      "audience": "dept:technical",
+      "questions": [
+        {
+          "id": "TEC-01",
+          "text": {
+            "fr": "Quels équipements intégrez-vous aux plateformes TUNAV ?",
+            "tn": "أنا معدّات تدمجوها في المنصات متاع TUNAV؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "OFFRE",
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Boîtiers GPS (ETX, ETBLE II…)",
+              "tn": "بواطات GPS (ETX، ETBLE II…)"
+            },
+            {
+              "fr": "Lecteurs CAN (EasyCAN Trace II…)",
+              "tn": "قارئات CAN (EasyCAN Trace II…)"
+            },
+            {
+              "fr": "Caméras embarquées (DashCam, CAMTRAC)",
+              "tn": "كاميرات في الكرهبة (DashCam، CAMTRAC)"
+            },
+            {
+              "fr": "Alarme (intrusion / mouvement)",
+              "tn": "إنذار (دخول / حركة)"
+            },
+            {
+              "fr": "Suivi batterie",
+              "tn": "متابعة البطارية"
+            },
+            {
+              "fr": "TPMS (pneus)",
+              "tn": "TPMS (العجلات)"
+            },
+            {
+              "fr": "Capteurs température / humidité",
+              "tn": "حسّاسات الحرارة / الرطوبة"
+            },
+            {
+              "fr": "Balises / Beacons",
+              "tn": "Balises / Beacons"
+            },
+            {
+              "fr": "Identification du chauffeur",
+              "tn": "التعرّف على السوّاق"
+            }
+          ]
+        },
+        {
+          "id": "TEC-02",
+          "text": {
+            "fr": "Combien de marques ou de modèles de boîtiers sont compatibles aujourd'hui (si connu, avec la source) ?",
+            "tn": "قدّاش من ماركة ولّا موديل بواطات متوافقين اليوم (كان تعرف، مع المصدر)؟"
+          },
+          "required": false,
+          "type": "open-short",
+          "feeds": [
+            "PREUVES"
+          ]
+        },
+        {
+          "id": "TEC-03",
+          "text": {
+            "fr": "Côté matériel et intégration, où en est chaque pack FleetIQ ?",
+            "tn": "من جهة المعدّات والإدماج، وين وصل كل pack متاع FleetIQ؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "stage",
+          "feeds": [
+            "OFFRE",
+            "PREUVES",
+            "OBJECTIFS"
+          ],
+          "rows": [
+            {
+              "fr": "SECURIT (ETX / ETBLE II)",
+              "tn": "SECURIT (ETX / ETBLE II)"
+            },
+            {
+              "fr": "PRO",
+              "tn": "PRO"
+            },
+            {
+              "fr": "FUELRESCUE (CAN carburant)",
+              "tn": "FUELRESCUE (CAN المازوط)"
+            },
+            {
+              "fr": "MECHANIC (CAN diagnostic)",
+              "tn": "MECHANIC (CAN التشخيص)"
+            },
+            {
+              "fr": "MECHANIC – maintenance prédictive",
+              "tn": "MECHANIC – الصيانة التنبّؤية"
+            },
+            {
+              "fr": "VISIOMATIX (CAMTRAC)",
+              "tn": "VISIOMATIX (CAMTRAC)"
+            }
+          ]
+        },
+        {
+          "id": "TEC-04",
+          "text": {
+            "fr": "Quelles nouveautés des 6 à 12 prochains mois pourrions-nous annoncer (non confidentielles) ?",
+            "tn": "شنوّة الجديد في الـ6 لـ12 شهر الجايين إلّي نجمو نعلنو عليه (موش سرّي)؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "CONTENUS",
+            "OFFRE"
+          ]
+        },
+        {
+          "id": "TEC-05",
+          "text": {
+            "fr": "Êtes-vous d'accord : ces points sont des atouts techniques de TUNAV.",
+            "tn": "موافق إلّي النقاط هاذي هوما نقاط قوة تقنية متاع TUNAV؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "agree",
+          "feeds": [
+            "PREUVES",
+            "POSITIONNEMENT"
+          ],
+          "rows": [
+            {
+              "fr": "Compatibilité avec de nombreuses marques de boîtiers",
+              "tn": "التوافق مع برشا ماركات بواطات"
+            },
+            {
+              "fr": "Fiabilité de la transmission des données",
+              "tn": "الثقة في إرسال المعطيات"
+            },
+            {
+              "fr": "Sécurité des données des clients",
+              "tn": "حماية المعطيات متاع الحرفاء"
+            },
+            {
+              "fr": "Disponibilité de la plateforme",
+              "tn": "المنصة ديما خدّامة"
+            },
+            {
+              "fr": "Qualité du réseau",
+              "tn": "جودة الشبكة"
+            }
+          ]
+        },
+        {
+          "id": "TEC-06",
+          "text": {
+            "fr": "Pouvons-nous annoncer publiquement un taux de disponibilité ou un niveau de sécurité ?",
+            "tn": "نجمو نعلنو قدّام الناس على نسبة خدمة المنصة ولّا مستوى الحماية؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES"
+          ],
+          "options": [
+            {
+              "fr": "Oui, il est mesuré (précisez la source)",
+              "tn": "إيه، يتقاس (قول المصدر)"
+            },
+            {
+              "fr": "Pas encore",
+              "tn": "مازال"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        },
+        {
+          "id": "TEC-07",
+          "text": {
+            "fr": "Expliquez simplement, comme à un client, une fonction technique que vous trouvez difficile à faire comprendre (ex. BUSCAN).",
+            "tn": "فسّر ببساطة، كأنك تحكي مع حريف، خاصية تقنية تلقاها صعيبة باش تتفهم (مثلا BUSCAN)."
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "VOIX",
+            "CONTENUS"
+          ]
+        },
+        {
+          "id": "TEC-08",
+          "text": {
+            "fr": "Quels contenus techniques seraient utiles ?",
+            "tn": "أنا محتوى تقني يكون مفيد؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "CONTENUS",
+            "CANAUX"
+          ],
+          "options": [
+            {
+              "fr": "Fiches de compatibilité",
+              "tn": "بطاقات التوافق"
+            },
+            {
+              "fr": "Tutoriels d'installation",
+              "tn": "فيديوهات التركيب"
+            },
+            {
+              "fr": "Démonstration de la plateforme",
+              "tn": "عرض المنصة"
+            },
+            {
+              "fr": "Articles d'expert sur LinkedIn",
+              "tn": "مقالات خبرة على LinkedIn"
+            },
+            {
+              "fr": "Webinaires",
+              "tn": "ويبينار"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IT",
+      "title": {
+        "fr": "Partie 4 · Développement et déploiement",
+        "tn": "الإعلامية"
+      },
+      "audience": "dept:it",
+      "questions": [
+        {
+          "id": "IT-01",
+          "text": {
+            "fr": "Sur quels produits ou applications travaillez-vous ?",
+            "tn": "على أنا منتوجات ولّا تطبيقات تخدم؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "OFFRE"
+          ],
+          "options": [
+            {
+              "fr": "Webtrace",
+              "tn": "Webtrace"
+            },
+            {
+              "fr": "Minitrace",
+              "tn": "Minitrace"
+            },
+            {
+              "fr": "FleetIQ",
+              "tn": "FleetIQ"
+            },
+            {
+              "fr": "DigitalOps",
+              "tn": "DigitalOps"
+            },
+            {
+              "fr": "Company Portfolio",
+              "tn": "Company Portfolio"
+            },
+            {
+              "fr": "Odoo / ERP",
+              "tn": "Odoo / ERP"
+            },
+            {
+              "fr": "Tableaux de bord BI",
+              "tn": "لوحات BI"
+            },
+            {
+              "fr": "Applications sur mesure pour des clients",
+              "tn": "تطبيقات حسب الطلب للحرفاء"
+            },
+            {
+              "fr": "API et intégrations partenaires",
+              "tn": "API وإدماج مع الشركاء"
+            }
+          ]
+        },
+        {
+          "id": "IT-02",
+          "text": {
+            "fr": "Où en est le développement de chaque produit TUNAV ONE ?",
+            "tn": "وين وصل التطوير متاع كل منتوج في TUNAV ONE؟"
+          },
+          "required": true,
+          "type": "matrix",
+          "scale": "stage",
+          "feeds": [
+            "OFFRE",
+            "OBJECTIFS"
+          ],
+          "rows": [
+            {
+              "fr": "FleetIQ",
+              "tn": "FleetIQ"
+            },
+            {
+              "fr": "DigitalOps",
+              "tn": "DigitalOps"
+            },
+            {
+              "fr": "SmartOps",
+              "tn": "SmartOps"
+            },
+            {
+              "fr": "PulseIQ",
+              "tn": "PulseIQ"
+            },
+            {
+              "fr": "iBlaze",
+              "tn": "iBlaze"
+            },
+            {
+              "fr": "VISIOMATIX",
+              "tn": "VISIOMATIX"
+            }
+          ]
+        },
+        {
+          "id": "IT-03",
+          "text": {
+            "fr": "Des fonctions d'aide à la décision ou d'intelligence artificielle sont-elles déjà disponibles pour les clients ?",
+            "tn": "فما خاصيات للمساعدة على اتخاذ القرار ولّا ذكاء اصطناعي متوفرة للحرفاء توا؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES",
+            "OFFRE"
+          ],
+          "note": "le message « IA / aide à la décision » n'est utilisé en publicité qu'avec cette preuve.",
+          "options": [
+            {
+              "fr": "Oui, en production",
+              "tn": "إيه، خدّامة"
+            },
+            {
+              "fr": "En développement",
+              "tn": "في التطوير"
+            },
+            {
+              "fr": "Prévues",
+              "tn": "مبرمجة"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        },
+        {
+          "id": "IT-04",
+          "text": {
+            "fr": "Si oui ou en développement : lesquelles, dans quel produit, et quel bénéfice pour le client ?",
+            "tn": "كان إيه ولّا في التطوير: شنوّة هي، في أنا منتوج، وشنوّة الفايدة للحريف؟"
+          },
+          "required": false,
+          "type": "open-long",
+          "feeds": [
+            "PREUVES",
+            "CONTENUS"
+          ]
+        },
+        {
+          "id": "IT-05",
+          "text": {
+            "fr": "Minitrace est-elle disponible sur les stores ?",
+            "tn": "Minitrace متوفرة في الـstores؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "PREUVES",
+            "AUDIENCE"
+          ],
+          "options": [
+            {
+              "fr": "Oui, Android et iOS",
+              "tn": "إيه، Android وiOS"
+            },
+            {
+              "fr": "Android seulement",
+              "tn": "Android برك"
+            },
+            {
+              "fr": "iOS seulement",
+              "tn": "iOS برك"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "IT-06",
+          "text": {
+            "fr": "Les clients Webtrace pourront-ils passer à FleetIQ sans changer de boîtier ni perdre leur historique ?",
+            "tn": "الحرفاء متاع Webtrace ينجمو يتعدّاو لـFleetIQ من غير ما يبدّلو البواطة وما يضيّعوش التاريخ متاعهم؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "OFFRE",
+            "OBJECTIONS",
+            "PARCOURS"
+          ],
+          "options": [
+            {
+              "fr": "Oui",
+              "tn": "إيه"
+            },
+            {
+              "fr": "En partie",
+              "tn": "جزئيا"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            },
+            {
+              "fr": "À l'étude",
+              "tn": "مازال في الدراسة"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "IT-07",
+          "text": {
+            "fr": "Quels résultats clients pouvons-nous mesurer à partir des données (BI) ?",
+            "tn": "شنوّة النتائج متاع الحرفاء إلّي نجمو نقيسوها من المعطيات (BI)؟"
+          },
+          "required": true,
+          "type": "multi",
+          "other": true,
+          "feeds": [
+            "PREUVES",
+            "MESURE"
+          ],
+          "options": [
+            {
+              "fr": "Consommation de carburant",
+              "tn": "استهلاك المازوط"
+            },
+            {
+              "fr": "Kilométrage",
+              "tn": "الكيلومترات"
+            },
+            {
+              "fr": "Excès de vitesse",
+              "tn": "تجاوز السرعة"
+            },
+            {
+              "fr": "Temps d'arrêt / ralenti",
+              "tn": "وقت الوقوف / الموتور يخدم وهي واقفة"
+            },
+            {
+              "fr": "Coûts de maintenance",
+              "tn": "مصاريف الصيانة"
+            },
+            {
+              "fr": "Aucun pour l'instant",
+              "tn": "حتى شي توا"
+            }
+          ]
+        },
+        {
+          "id": "IT-08",
+          "text": {
+            "fr": "Le site et les applications sont-ils mesurés par un outil d'analyse ?",
+            "tn": "الموقع والتطبيقات عندهم أداة تقيس الزيارات؟"
+          },
+          "required": true,
+          "type": "single",
+          "other": true,
+          "feeds": [
+            "MESURE",
+            "CANAUX"
+          ],
+          "options": [
+            {
+              "fr": "Google Analytics 4",
+              "tn": "Google Analytics 4"
+            },
+            {
+              "fr": "Un autre outil",
+              "tn": "أداة أخرى"
+            },
+            {
+              "fr": "Aucun",
+              "tn": "حتى شي"
+            },
+            {
+              "fr": "Je ne sais pas",
+              "tn": "ما نعرفش"
+            }
+          ]
+        },
+        {
+          "id": "IT-09",
+          "text": {
+            "fr": "Pouvons-nous publier des captures d'écran de Webtrace, Minitrace ou FleetIQ ?",
+            "tn": "نجمو ننشرو تصاور شاشة متاع Webtrace ولّا Minitrace ولّا FleetIQ؟"
+          },
+          "required": true,
+          "type": "single",
+          "feeds": [
+            "CONTENUS",
+            "REGLES"
+          ],
+          "options": [
+            {
+              "fr": "Oui, avec des données fictives",
+              "tn": "إيه، بمعطيات موش حقيقية"
+            },
+            {
+              "fr": "Oui, données réelles anonymisées",
+              "tn": "إيه، معطيات حقيقية من غير أسامي"
+            },
+            {
+              "fr": "Non",
+              "tn": "لا"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "welcome": {
+    "fr": "Bonjour, merci de prendre 15 à 20 minutes pour ce questionnaire. TUNAV prépare TUNAV ONE : un seul écosystème pour toutes nos solutions. Vos réponses vont construire la voix digitale de TUNAV à Tunis : ce que nous disons de nos produits, à qui, comment et sur quels canaux. Il n'y a pas de bonne ou de mauvaise réponse : votre expérience du terrain est précieuse. Vos réponses sont nominatives et restent internes à TUNAV ; aucune réponse ne sera publiée et personne ne sera cité sans son accord écrit.",
+    "tn": "عسلامة، يعطيك الصحة على 15 لـ20 دقيقة تعطيهم للاستبيان هذا. TUNAV تحضّر في TUNAV ONE: نظام واحد يجمع الحلول متاعنا الكل. الأجوبة متاعك باش تبني الصوت الرقمي متاع TUNAV في تونس: شنوّة نقولو على المنتوجات متاعنا، لمنو، كيفاش، وفي أنا منصات. ما فماش جواب صحيح وجواب غالط: التجربة متاعك في الخدمة تهمّنا برشا. الأجوبة بالإسم وتقعد داخل TUNAV برك؛ حتى جواب ما يتنشر وحتى حد ما يتذكر إسمو من غير موافقة مكتوبة منو."
+  },
+  "end": {
+    "fr": "Merci ! Vos réponses seront analysées par l'équipe Product & Innovation. Une synthèse sera partagée avec toutes les équipes.",
+    "tn": "يعطيك الصحة! الأجوبة متاعك باش يحلّلها فريق المنتوج والابتكار، وباش نشاركو ملخّص مع الفرق الكل."
+  }
+}

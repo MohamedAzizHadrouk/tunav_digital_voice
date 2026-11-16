@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>TUNAV Digital Voice</title>
+  <link rel="icon" href="assets/tunav-symbole-original.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=1.3.3">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <img src="assets/tunav-logo-horizontal-sans-signature-original.svg" alt="TUNAV">
+      <span class="title">DIGITAL VOICE</span>
+      <span class="spacer"></span>
+      <div class="lang-switch" role="group" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="tn" aria-pressed="false">تونسي</button>
+      </div>
+      <a class="btn btn-secondary btn-sm admin-link" href="admin.html" title="Réponses et statistiques (accès réservé aux administrateurs)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span id="admin-link-label">Connexion admin</span>
+      </a>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  </header>
+
+  <main class="wrap" id="main" tabindex="-1">
+    <p class="muted">Chargement…</p>
+  </main>
+
+  <nav class="navbar hidden" id="navbar">
+    <div class="navbar-inner">
+      <button type="button" class="btn btn-ghost" id="btn-back"></button>
+      <span class="step" id="step-label"></span>
+      <button type="button" class="btn btn-primary" id="btn-next"></button>
+    </div>
+  </nav>
+
+  <script src="js/config.js?v=1.3.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/data.js?v=1.3.3"></script>
+  <script src="js/form.js?v=1.3.3"></script>
+</body>
+</html>
